@@ -9,6 +9,7 @@ const notes = require('Develop/public/assets/js/index.js')
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Add a static middleware for serving assets in the public folder
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
