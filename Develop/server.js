@@ -29,6 +29,15 @@ app.get("/api/notes", (req, res) => {
   })
 });
  
+// POST Route for database
+app.post("/api/notes", (req, res) => {
+  const note = req.body;
+  read("/db/db.json","UTF-8").then(function (data){
+    notes = [].concat(JSON.parse(data))
+    res.json(notes);
+  })
+});
+
 // HTML Route for homepage
 app.get("/notes", function(req, res) {
   res.sendFile(path.join(__dirname,"public/notes.html"));
