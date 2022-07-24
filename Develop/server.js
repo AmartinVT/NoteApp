@@ -21,8 +21,8 @@ const read = util.promisify(fs.readFile);
 const write = util.promisify(fs.writeFile);
 
 // GET Route for database
-app.get("api/notes", (req, res) => {
-  read("/db/db.json","UTF-8").then(function (data){
+app.get("/api/notes", (req, res) => {
+  read("./db/db.json","UTF-8").then(function (data){
     notes = [].concat(JSON.parse(data))
     res.json(notes);
   })
@@ -31,13 +31,13 @@ app.get("api/notes", (req, res) => {
 // POST Route for database
 app.post("/api/notes", (req, res) => {
   const note = req.body;
-  read("/db/db.json","UTF-8").then(function (data){
+  read("./db/db.json","UTF-8").then(function (data){
     let notes = [].concat(JSON.parse(data));
     note.id == notes.length + 1;
     notes.push(note);
     return notes;
   }).then(function (notes){
-    write("/db/db.json",JSON.stringify(notes))
+    write("./db/db.json",JSON.stringify(notes))
     res.json(notes);
   })
 });
