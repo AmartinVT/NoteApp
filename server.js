@@ -1,12 +1,12 @@
 // Dependencies for server
 const fs = require('fs'); // User entry 
-const express = require('Express'); // Node web-app express for use with node
+const express = require('express'); // Node web-app express for use with node
 const path = require('path'); // Dependency for managing file paths on the local server
 const util = require('util'); // Allows for node promising to read and write
 
 
 // Creates app to utilize express for local server management
-const app = express();
+const app = express()
 const PORT = process.env.PORT || 3001; //3001 for localhost and process.env.PORT for heroku
 
 // Sets up the Express app to handle data parsing
