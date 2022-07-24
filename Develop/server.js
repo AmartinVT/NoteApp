@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Add a static middleware for serving assets in the public folder
-app.use(express.static("/public"));
+app.use(express.static('/public'));
 
 // Reading and writing
 const read = util.promisify(fs.readFile);
@@ -23,7 +23,7 @@ const write = util.promisify(fs.writeFile);
 
 // GET Route for database
 app.get("/api/notes", (req, res) => {
-  read("/db/db.json","utf-8").then(function (data){
+  read("/db/db.json","UTF-8").then(function (data){
     notes = [].concat(JSON.parse(data))
     res.json(notes);
   })
@@ -31,11 +31,11 @@ app.get("/api/notes", (req, res) => {
  
 // HTML Route for homepage
 app.get("/notes", function(req, res) {
-  res.sendFile(path.join(__dirname,"./public/notes.html"));
+  res.sendFile(path.join(__dirname,"public/notes.html"));
 });
 
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname,"./public/index.html"));
+  res.sendFile(path.join(__dirname,"public/index.html"));
 });
 
 // App listening to the port
