@@ -1,11 +1,11 @@
 // Dependencies for server
 const fs = require('fs');
 const express = require('express');
-//const path = require('path');
+const path = require('path');
 //const uuid = require('uuid');
 //const notes = require('Develop/public/assets/js/index.js');
 const util = require('util');
-const PORT = process.env.PORT || 5501;
+const PORT = process.env.PORT || 3001;
 
 // Creates app to utilize express for local server management
 const app = express();
@@ -23,15 +23,20 @@ const write = util.promisify(fs.writeFile);
 
 // GET Route for database
 app.get("/api/notes", (req, res) => {
-  read("./Develop/db/db.json","utf-8").then(function (data){
+  read("/db/db.json","utf-8").then(function (data){
     notes = [].concat(JSON.parse(data))
     res.json(notes);
   })
-}
+});
  
 // HTML Route for homepage
+app.get("/notes", function(req, res) {
+  res.sendFile(path.join(__dirname,"./public/notes.html"));
+});
 
-);
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname,"./public/index.html"));
+});
 
 // App listening to the port
 app.listen(PORT, () => {
