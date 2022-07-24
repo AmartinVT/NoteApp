@@ -23,7 +23,10 @@ const write = util.promisify(fs.writeFile);
 
 // GET Route for homepage
 app.get("/api/notes", (req, res) => {
-  getNotes("./Develop/db/db.json","utf-8")
+  getNotes("./Develop/db/db.json","utf-8").then(function (data){
+    notes = [].concat(JSON.parse(data))
+    res.json(notes);
+  })
 }
   
 );
