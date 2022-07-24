@@ -1,6 +1,6 @@
 // Dependencies for server
 const fs = require('fs'); // User entry 
-const express = require('express'); // Node web-app express for use with node
+const express = require('Express'); // Node web-app express for use with node
 const path = require('path'); // Dependency for managing file paths on the local server
 const util = require('util'); // Allows for node promising to read and write
 
