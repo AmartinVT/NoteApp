@@ -15,15 +15,15 @@ Heroku Server:
 
 ![App homepage](Assets/Screenshots/HW11_Homepage.png)
 
-![Blank note entry](Assets/Screenshots/HW11_Blank Note.png)
+![Blank note entry](Assets/Screenshots/HW11_Blank_Note.png)
 
-![Note typed, not submitted](Assets/Screenshots/HW11_Typed Note.png)
+![Note typed, not submitted](Assets/Screenshots/HW11_Typed_Note.png)
 
-![Note saved](Assets/Screenshots/HW11_Saved Note.png)
+![Note saved](Assets/Screenshots/HW11_Saved_Note.png)
 
-![Note pulled when clicked](Assets/Screenshots/HW11_Repulled Note.png)
+![Note pulled when clicked](Assets/Screenshots/HW11_Repulled_Note.png)
 
-![Local database](Assets/Screenshots/HW11_Local DB Storage Proof.png)
+![Local database](Assets/Screenshots/HW11_Local_DB_Storage_Proof.png)
 
 ## Dependencies
 Express.js for framework between browser and local server
