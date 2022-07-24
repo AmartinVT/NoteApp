@@ -19,8 +19,10 @@ const read = util.promisify(fs.readFile);
 const write = util.promisify(fs.writeFile);
 
 // GET Route for homepage
-app.get('Develop/public/notes.html', (req, res) =>
-  res.read(path.join(__dirname, '/public/index.html'))
+app.get('Develop/public/notes.html', (req, res) => {
+  read("Develop/db/db.json","utf-8")
+}
+  
 );
 
 // App listening to the port
