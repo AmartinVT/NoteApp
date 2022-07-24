@@ -1,6 +1,8 @@
 ## Dev Info
 Name: Adam Martin
+
 Assignment: Note Taking App
+
 Due Date: 7/24/22
 
 ## About this app
@@ -27,7 +29,11 @@ Heroku Server:
 
 ## Dependencies
 Express.js for framework between browser and local server
+
 Node.js for local server management
+
 fs for user entry
+
 path for utility to manage local file directories
+
 util for local server promises
