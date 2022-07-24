@@ -8,7 +8,11 @@
   "description": "Name: Adam Martin Assignment: Note Taking App Due Date: 7/24/22",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "express": "^4.18.1",
+    "path": "^0.12.7",
+    "uuid": "^8.3.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

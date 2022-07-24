@@ -5,7 +5,7 @@ const express = require('express');
 //const uuid = require('uuid');
 //const notes = require('Develop/public/assets/js/index.js');
 const util = require('util');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5500;
 
 // Creates app to utilize express for local server management
 const app = express();
@@ -15,15 +15,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Add a static middleware for serving assets in the public folder
-app.use(express.static('Develop/public'));
+app.use(express.static("Develop/public"));
 
 // Reading and writing
-const read = util.promisify(fs.readFile);
+const getNotes = util.promisify(fs.readFile);
 const write = util.promisify(fs.writeFile);
 
 // GET Route for homepage
-app.get("/", (req, res) => {
-  read("Develop/db/db.json","utf-8")
+app.get("/api/notes", (req, res) => {
+  getNotes("./Develop/db/db.json","utf-8")
 }
   
 );
