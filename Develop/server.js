@@ -19,10 +19,11 @@ const read = util.promisify(fs.readFile);
 const write = util.promisify(fs.writeFile);
 
 // GET Route for homepage
-app.get('/', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/index.html'))
+app.get('Develop/public/notes.html', (req, res) =>
+  res.read(path.join(__dirname, '/public/index.html'))
 );
 
+// App listening to the port
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
 });
