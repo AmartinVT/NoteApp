@@ -33,7 +33,7 @@ app.post("/api/notes", (req, res) => {
   const note = req.body;
   read("./db/db.json","UTF-8").then(function (data){
     let notes = [].concat(JSON.parse(data));
-    note.id == notes.length + 1;
+    note.id = notes.length + 1;
     notes.push(note);
     return notes;
   }).then(function (notes){
