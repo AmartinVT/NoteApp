@@ -3,7 +3,8 @@ const fs = require('fs');
 const express = require('fs');
 const path = require('path');
 const uuid = require('uuid');
-const notes = require('Develop/public/assets/js/index.js')
+const notes = require('Develop/public/assets/js/index.js');
+const util = require('util');
 const PORT = process.env.PORT || 3001;
 
 // Sets up the Express app to handle data parsing
@@ -12,6 +13,10 @@ app.use(express.json());
 
 // Add a static middleware for serving assets in the public folder
 app.use(express.static('public'));
+
+// Reading and writing
+const read = util.promisify(fs.readFile);
+const write = util.promisify(fs.writeFile);
 
 // GET Route for homepage
 app.get('/', (req, res) =>
